@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Farsang Bence\\OneDrive\\Asztali gép\\Codes\\C#\\EtteremApp\\EtteremApp\\EtteremApp.csproj": {}
+    "D:\\Egyetem\\Szoftech\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Farsang Bence\\OneDrive\\Asztali gép\\Codes\\C#\\EtteremApp\\EtteremApp\\EtteremApp.csproj": {
+    "D:\\Egyetem\\Szoftech\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Farsang Bence\\OneDrive\\Asztali gép\\Codes\\C#\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
+        "projectUniqueName": "D:\\Egyetem\\Szoftech\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
         "projectName": "EtteremApp",
-        "projectPath": "C:\\Users\\Farsang Bence\\OneDrive\\Asztali gép\\Codes\\C#\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
+        "projectPath": "D:\\Egyetem\\Szoftech\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
         "packagesPath": "C:\\Users\\Farsang Bence\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Farsang Bence\\OneDrive\\Asztali gép\\Codes\\C#\\EtteremApp\\EtteremApp\\obj\\",
+        "outputPath": "D:\\Egyetem\\Szoftech\\EtteremApp\\EtteremApp\\EtteremApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Farsang Bence\\AppData\\Roaming\\NuGet\\NuGet.Config",
