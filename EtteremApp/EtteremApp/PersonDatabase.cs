@@ -7,7 +7,7 @@ using System.IO;
 
 class PersonDatabase
 {
-    List<Person> personList = new List<Person>();
+    private List<Person> personList = new List<Person>();
 
     PersonDatabase()
     {
@@ -15,10 +15,13 @@ class PersonDatabase
         foreach (string input in wholeInput)
         {
             string[] temp = input.Split(',');
+            //todo
         }
     }
     ~PersonDatabase()
     {
-
+        //beírni a fájlba?
     }
+    //list?
+  
 }

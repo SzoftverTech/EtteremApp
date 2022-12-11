@@ -13,3 +13,18 @@ C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\
 C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\ref\EtteremApp.dll
 C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.pdb
 C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.genruntimeconfig.cache
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\bin\Debug\net6.0\EtteremApp.exe
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\bin\Debug\net6.0\EtteremApp.deps.json
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\bin\Debug\net6.0\EtteremApp.runtimeconfig.json
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\bin\Debug\net6.0\EtteremApp.dll
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\bin\Debug\net6.0\ref\EtteremApp.dll
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\bin\Debug\net6.0\EtteremApp.pdb
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.csproj.AssemblyReference.cache
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.AssemblyInfoInputs.cache
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.AssemblyInfo.cs
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.csproj.CoreCompileInputs.cache
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.dll
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\obj\Debug\net6.0\ref\EtteremApp.dll
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.pdb
+D:\Egyetem\Szoftech\EtteremApp\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.genruntimeconfig.cache

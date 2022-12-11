@@ -3,8 +3,8 @@
 public class Food
 {
 	private string name;
-
-	 int price {  get;  set; }
+	private int price;
+	private int id;
 
 	public Food(string name, int price)
 	{
@@ -14,5 +14,21 @@ public class Food
 	public string getName()
     {
 		return name;
+    }
+	public int getPrice()
+	{
+		return price;
+	}
+	public void setPrice(int price)
+    {
+		this.price = price;
+    }
+	public void setName(string name)
+    {
+		this.name = name;
+    }
+	public int getId()
+    {
+		return id;
     }
 }

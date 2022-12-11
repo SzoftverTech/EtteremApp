@@ -21,7 +21,9 @@ public abstract class Person
 	}
 	public void getInfo()
     {
-		Console.WriteLine("Üdvözöljük az étteremben!");
-		Console.WriteLine("Elérhetőségek:");
+		Console.WriteLine("Welcome to our restaurant!");
+		Console.WriteLine("Contacts:");
+		Console.WriteLine("Email: restaurant@gmail.com");
+		Console.WriteLine("Mobile: 062012345679");
     }
 }
