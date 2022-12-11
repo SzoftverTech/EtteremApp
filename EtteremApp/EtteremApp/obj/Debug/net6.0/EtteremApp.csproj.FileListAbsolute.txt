@@ -1,0 +1,15 @@
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.csproj.AssemblyReference.cache
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.AssemblyInfoInputs.cache
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.AssemblyInfo.cs
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.csproj.CoreCompileInputs.cache
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\bin\Debug\net6.0\EtteremApp.exe
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\bin\Debug\net6.0\EtteremApp.deps.json
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\bin\Debug\net6.0\EtteremApp.runtimeconfig.json
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\bin\Debug\net6.0\EtteremApp.dll
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\bin\Debug\net6.0\ref\EtteremApp.dll
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\bin\Debug\net6.0\EtteremApp.pdb
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.dll
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\ref\EtteremApp.dll
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.pdb
+C:\Users\Farsang Bence\OneDrive\Asztali gép\Codes\C#\EtteremApp\EtteremApp\obj\Debug\net6.0\EtteremApp.genruntimeconfig.cache
