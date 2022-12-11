@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EtteremApp
+class Guest : Person
 {
-    internal class Class1
-    {
-    }
+    public Guest(string name, string email, string password) : base(name, email, password) { }
+
+
 }
