@@ -9,8 +9,6 @@ public class Menu
 
 	}
 
-
-
 	public void listFood()
     {
 		for(int i =0;i< foodList.Count();i++)
@@ -28,7 +26,7 @@ public class Menu
 		Console.WriteLine("1 - ");
 	}
 
-	public void addItem(string name, int price)
+	public void addItem()
     {
 		Console.WriteLine("Give the name of the new food:");
 
@@ -113,4 +111,13 @@ public class Menu
 		int idx = Convert.ToInt32(Console.ReadLine());
 		foodList.RemoveAt(idx);
 	}
+	public int getPrice(string name)
+    {
+		for (int i =0;i<foodList.Count;i++)
+        {
+			if (foodList[i].getName().Equals(name))
+			return foodList[i].getPrice();
+        }
+		return 0;
+    }
 }
