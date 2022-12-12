@@ -32,9 +32,13 @@ class Reserve
         Console.WriteLine("Please give which table to reserve:");
         listTable();
         int idx = Convert.ToInt32(Console.ReadLine());
-
-        tableList[idx].setAvailablity(false);
-
+        if (tableList[idx].isAvailable())
+        {
+            tableList[idx].setAvailablity(false);
+            Console.WriteLine("Sikeres foglalás!");
+        }
+        else
+            Console.WriteLine("Már foglalt az asztal!");
     }
 }
 
