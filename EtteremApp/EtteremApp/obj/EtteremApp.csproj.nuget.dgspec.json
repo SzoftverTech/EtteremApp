@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Egyetem\\Szoftech\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj": {}
+    "D:\\SzoftTech\\Etterem\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj": {}
   },
   "projects": {
-    "D:\\Egyetem\\Szoftech\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj": {
+    "D:\\SzoftTech\\Etterem\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Egyetem\\Szoftech\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
+        "projectUniqueName": "D:\\SzoftTech\\Etterem\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
         "projectName": "EtteremApp",
-        "projectPath": "D:\\Egyetem\\Szoftech\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
-        "packagesPath": "C:\\Users\\Farsang Bence\\.nuget\\packages\\",
-        "outputPath": "D:\\Egyetem\\Szoftech\\EtteremApp\\EtteremApp\\EtteremApp\\obj\\",
+        "projectPath": "D:\\SzoftTech\\Etterem\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
+        "packagesPath": "C:\\Users\\abcbo\\.nuget\\packages\\",
+        "outputPath": "D:\\SzoftTech\\Etterem\\EtteremApp\\EtteremApp\\EtteremApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Farsang Bence\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\abcbo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -54,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
