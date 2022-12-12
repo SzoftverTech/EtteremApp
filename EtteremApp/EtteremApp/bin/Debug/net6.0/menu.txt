@@ -1,0 +1,4 @@
+kolbasz,50
+hurka,40
+leves,60
+kokakola,10

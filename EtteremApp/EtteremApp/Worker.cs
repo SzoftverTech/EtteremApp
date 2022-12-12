@@ -8,7 +8,7 @@ class Worker : Person
 {
     int privilege = 2;
     public Worker(string name, string email, string password) : base(name, email, password) { }
-    public  void modifyMenu()
+    public override void inputAction()
     {
         Menu currentMenu = new Menu();
 

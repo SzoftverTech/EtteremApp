@@ -5,7 +5,7 @@ public class Manager : Person
     int privilege = 3;
     public Manager(string name, string email, string password) : base(name, email, password) { }
 
-    public void inputAction()
+    public override void inputAction()
     {
         Console.WriteLine("What would you like to do?");
         Console.WriteLine("1 - View the Menu");
@@ -13,13 +13,15 @@ public class Manager : Person
         Console.WriteLine("3 - View the information about the restaurant");
         Console.WriteLine("4 - Show statistics");
         Console.WriteLine("5 - Edit customer data");
+        Console.WriteLine("6 - Exit");
 
         Console.WriteLine("Input the chosen number: ");
-        int op=Convert.ToInt32(Console.ReadLine());
+        int op = Convert.ToInt32(Console.ReadLine());
 
-        while(op<1&&op>5)
-            Choice(op);
-        
+        while (op < 1 || op > 6)
+            op = Convert.ToInt32(Console.ReadLine());
+
+        Choice(op);
     }
 
     public void Choice(int number)
@@ -73,7 +75,7 @@ public class Manager : Person
                     break;
                 }
         }
-
+        inputAction();
     }
 
     public void Login()

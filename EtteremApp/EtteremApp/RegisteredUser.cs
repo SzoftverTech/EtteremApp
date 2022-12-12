@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 class RegisteredUser : Person
 {
     int privilege = 1;
-    string phoneNumber;
-    string address;
+    string phoneNumber = null;
+    string address = null;
     List<List<Food>> orderList = new List<List<Food>>();
     public RegisteredUser(string name, string email, string password) : base(name, email, password) { }
 
-    public void inputAction()
+    public override void inputAction()
     {
         Console.WriteLine("What would you like to do?");
         Console.WriteLine("1 - View the Menu");
@@ -20,24 +20,26 @@ class RegisteredUser : Person
         Console.WriteLine("3 - View the Information about the restaurant");
         Console.WriteLine("4 - Order food");
         Console.WriteLine("5 - Reserve table");
+        Console.WriteLine("6 - Exit");
 
         Console.WriteLine("Input the chosen number: ");
         int op = Convert.ToInt32(Console.ReadLine());
 
-        while (op < 1 && op > 5)
-            Choice(op);
+        while (op < 1 || op > 6)
+            op = Convert.ToInt32(Console.ReadLine());
 
+        Choice(op);
     }
 
     public void Choice(int number)
     {
-        Menu menu = new Menu();
 
         switch (number)
         {
             case 1:
                 {
                     //Listing the menu
+                    Menu menu = new Menu();
                     menu.listFood();
                     break;
                 }
@@ -59,6 +61,11 @@ class RegisteredUser : Person
             case 4:
                 {
                     //order Food
+                    if(phoneNumber == null && address == null)
+                    {
+                        Console.WriteLine("Please give your data first!");
+                        break;
+                    }
                     orderFood();
                     break;
                 }
@@ -69,14 +76,19 @@ class RegisteredUser : Person
 
                     break;
                 }
-
-            default:
+            case 6:
                 {
-                    Console.WriteLine("Wrong number, try again.");
+                    Environment.Exit(0);
                     break;
                 }
-        }
 
+                default:
+                    {
+                        Console.WriteLine("Wrong number, try again.");
+                        break;
+                    }
+            }
+        inputAction();
     }
 
     private string getAddress()
@@ -100,7 +112,10 @@ class RegisteredUser : Person
         Console.Write("Please add your phone number: ");
         phoneNumber = Console.ReadLine();
     }
-
+    public int getPrivilege()
+    {
+        return privilege;
+    }
 
 
     public void orderFood()
@@ -127,7 +142,13 @@ class RegisteredUser : Person
         do
         {
             Console.Write("Would you like to choose anything else? (1:yes, 2:no): ");
-            int option = Convert.ToInt32(Console.ReadLine());
+            int option;
+            option = Convert.ToInt32(Console.ReadLine());
+
+            while (option < 1 || option > 2)
+                option = Convert.ToInt32(Console.ReadLine());
+            
+            
             if (option == 1)
             {
                 Console.Write("Please type the id of the food you would like to order: ");

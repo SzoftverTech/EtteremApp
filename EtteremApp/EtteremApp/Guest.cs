@@ -19,9 +19,9 @@ class Guest : Person
         string password = Console.ReadLine();
 
         RegisteredUser r1 = new RegisteredUser(name, email, password);
-        File.AppendAllText("users.txt", name + ',' + email + ',' + password);
+        File.AppendAllText("users.txt", name + ',' + email + ',' + password + ',' + r1.getPrivilege());
     }
-    public void inputAction()
+    public override void inputAction()
     {
         Console.WriteLine("Please choose a menu item:");
         Console.WriteLine("1: Register");
