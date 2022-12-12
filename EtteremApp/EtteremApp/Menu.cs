@@ -3,24 +3,32 @@ using System.Collections.Generic;
 
 public class Menu
 {
-	public List<Food> foodList = new List<Food>();
+	private List<Food> foodList = new List<Food>();
 	public Menu()
 	{
 
 	}
+
+
+
 	public void listFood()
     {
-		Console.WriteLine("Our menu:");
-		for (int i =0;i< foodList.Count();i++)
+		for(int i =0;i< foodList.Count();i++)
         {
-			
             Console.Write(foodList[i].getName());
 			Console.Write(foodList[i].getPrice());
 			Console.Write(foodList[i].getId());
 			Console.WriteLine(); 
 		}
     }
-	public void addItem()
+
+	public void editMenu()
+	{
+		Console.WriteLine("How would you like to edit the menu?");
+		Console.WriteLine("1 - ");
+	}
+
+	public void addItem(string name, int price)
     {
 		Console.WriteLine("Give the name of the new food:");
 
@@ -105,14 +113,4 @@ public class Menu
 		int idx = Convert.ToInt32(Console.ReadLine());
 		foodList.RemoveAt(idx);
 	}
-
-	public int getPrice(string name)
-    {
-		for(int i = 0;i< foodList.Count; i++)
-        {
-			if (foodList[i].getName().Equals(name))
-				return foodList[i].getPrice();
-        }
-		return 0;
-    }
 }
