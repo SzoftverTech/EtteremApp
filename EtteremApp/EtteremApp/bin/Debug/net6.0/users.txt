@@ -1,2 +1,3 @@
-bence,bence,bence,1
+username,email,password,1
 Boti,boti@gmail.com,botika,3
+newusername,valami@gmail.com,asadasd,1

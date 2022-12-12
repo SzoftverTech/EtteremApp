@@ -37,10 +37,7 @@ public abstract class Person
 	{
 		this.email = email;
 	}
-	public int getPrivilege()
-    {
-		return privilege;
-    }
+	public abstract int getPrivilege();
 	public void login()
 	{
 		//...

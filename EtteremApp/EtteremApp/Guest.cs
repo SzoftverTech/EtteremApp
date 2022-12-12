@@ -21,6 +21,11 @@ class Guest : Person
         RegisteredUser r1 = new RegisteredUser(name, email, password);
         File.AppendAllText("users.txt", name + ',' + email + ',' + password + ',' + r1.getPrivilege());
     }
+
+    public override int getPrivilege()
+    {
+        return privilege;
+    }
     public override void inputAction()
     {
         Console.WriteLine("Please choose a menu item:");
@@ -48,14 +53,16 @@ class Guest : Person
                 {
                     //Register
                     register();
+                    inputAction();
                     break;
                 }
 
             case 2:
                 {
-                    //Editing menu
+                    //show menu
                     Menu menu = new Menu();
                     menu.listFood();
+                    inputAction();
                     break;
                 }
 
@@ -68,7 +75,6 @@ class Guest : Person
                 }
             case 4:
                 {
-                    Environment.Exit(0);
                     break;
                 }
             default:
@@ -77,6 +83,7 @@ class Guest : Person
                     break;
                 }
         }
+        
 
     }
 

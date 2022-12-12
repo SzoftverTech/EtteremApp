@@ -9,10 +9,10 @@ class main {
         string email = null;
         
 
-            Console.WriteLine("Please select an option:");
-            Console.WriteLine("1: Login");
-            Console.WriteLine("2: Continue as guest");
-            Console.WriteLine("99: Exit");
+        Console.WriteLine("Please select an option:");
+        Console.WriteLine("1: Login");
+        Console.WriteLine("2: Continue as guest");
+        Console.WriteLine("99: Exit");
         do
         {
                 input = Convert.ToInt32(Console.ReadLine());
@@ -35,6 +35,10 @@ class main {
                         {
                             Guest g1 = new Guest();
                             g1.inputAction();
+                            Console.WriteLine("Would you like to login? (1: yes, 2:no)");
+                            int choice = Convert.ToInt32(Console.ReadLine());
+                            if(choice == 1)
+                                goto case 1;
                             break;
                         }
 

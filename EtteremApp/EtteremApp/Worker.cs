@@ -8,6 +8,11 @@ class Worker : Person
 {
     int privilege = 2;
     public Worker(string name, string email, string password) : base(name, email, password) { }
+
+    public override int getPrivilege()
+    {
+        return privilege;
+    }
     public override void inputAction()
     {
         Menu currentMenu = new Menu();
@@ -16,7 +21,7 @@ class Worker : Person
         Console.WriteLine("1: Add new item");
         Console.WriteLine("2: Update existing item");
         Console.WriteLine("3: Delete an item");
-
+        //ide amiket kell neki
         int option = Convert.ToInt32(Console.ReadLine());
         switch (option)
         {

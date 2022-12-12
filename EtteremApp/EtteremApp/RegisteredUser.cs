@@ -10,6 +10,7 @@ class RegisteredUser : Person
     string phoneNumber = null;
     string address = null;
     List<List<Food>> orderList = new List<List<Food>>();
+    // rendelések listázása
     public RegisteredUser(string name, string email, string password) : base(name, email, password) { }
 
     public override void inputAction()
@@ -61,7 +62,7 @@ class RegisteredUser : Person
             case 4:
                 {
                     //order Food
-                    if(phoneNumber == null && address == null)
+                    if(phoneNumber == null || address == null)
                     {
                         Console.WriteLine("Please give your data first!");
                         break;
@@ -91,6 +92,7 @@ class RegisteredUser : Person
         inputAction();
     }
 
+
     private string getAddress()
     {
         return address;
@@ -112,7 +114,7 @@ class RegisteredUser : Person
         Console.Write("Please add your phone number: ");
         phoneNumber = Console.ReadLine();
     }
-    public int getPrivilege()
+    public override int getPrivilege()
     {
         return privilege;
     }
@@ -138,14 +140,14 @@ class RegisteredUser : Person
 
         tmp.Add(back);
 
-
+        int option;
         do
         {
             Console.Write("Would you like to choose anything else? (1:yes, 2:no): ");
-            int option;
+            
             option = Convert.ToInt32(Console.ReadLine());
 
-            while (option < 1 || option > 2)
+            while (option < 1 || option >2)
                 option = Convert.ToInt32(Console.ReadLine());
             
             
@@ -154,7 +156,7 @@ class RegisteredUser : Person
                 Console.Write("Please type the id of the food you would like to order: ");
 
                 input = Convert.ToInt32(Console.ReadLine());
-                back = currentMenu.getFood(input);
+                back = currentMenu.getFood(option);
 
                 while (back == null)
                 {
@@ -165,7 +167,7 @@ class RegisteredUser : Person
 
                 tmp.Add(back);
             }
-        } while (!input.Equals(2));
+        } while (!option.Equals(2));
 
         orderList.Add(tmp);
 

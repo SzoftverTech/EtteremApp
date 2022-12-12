@@ -24,6 +24,10 @@ public class Manager : Person
         Choice(op);
     }
 
+    public override int getPrivilege()
+    {
+        return privilege;
+    }
     public void Choice(int number)
     {
         //read the current menu
@@ -105,8 +109,14 @@ public class Manager : Person
                                     break;
                                 }
                         }
+                        WriteNewUsers(tmp);
                         Console.WriteLine("Name property has been set for the user!");
                     }
+                    break;
+                }
+            case 6:
+                {
+                    Environment.Exit(0);
                     break;
                 }
 
@@ -128,11 +138,32 @@ public class Manager : Person
         {
             string[] splitted = read[i].Split(',');
             //name,email,pass 
+            int privilege = 0;
             string name, mail, pass;
             name = splitted[0];
             mail = splitted[1];
             pass = splitted[2];
-            tmp.Add(new RegisteredUser(name, mail, pass));
+            privilege = Convert.ToInt32(splitted[3]);
+            switch (privilege)
+            {
+                case 1:
+                    {
+                        tmp.Add(new RegisteredUser(name, mail, pass));
+                        break;
+                    }
+                case 2:
+                    {
+                        tmp.Add(new Worker(name, mail, pass));
+                        break;
+                    }
+                case 3:
+                    {
+                        tmp.Add(new Manager(name, mail, pass));
+                        break;
+                    }
+
+            }
+            
         }
         return tmp;
 
