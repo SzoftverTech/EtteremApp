@@ -11,7 +11,10 @@ public class Menu
 		{
 			string[] temp = input.Split(',');
 			string name = temp[0];
-			int ar = Convert.ToInt32(temp[1]);
+			int price = Convert.ToInt32(temp[1]);
+
+			Food tmp = new Food(name, price);
+			foodDict.Add(foodDict.Count + 1, tmp);
 		}
 	}
 

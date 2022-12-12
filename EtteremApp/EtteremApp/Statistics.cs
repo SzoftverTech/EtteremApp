@@ -6,21 +6,63 @@ using System.Threading.Tasks;
 
 class Statistics
 {
-    //private List<Food> orders = new List<Order>();
+    private List<Food> orders = new List<Food>();
+
+    public Statistics() {
+        string[] wholeInput = File.ReadAllLines("menu.txt");
+        foreach (string input in wholeInput)
+        {
+            string[] temp = input.Split(',');
+            string name = temp[0];
+            int price = Convert.ToInt32(temp[1]);
+
+            Food tmp = new Food(name, price);
+            orders.Add(tmp);
+        }
+    }
 
     public void showAveragePrice()
     {
-        int sum = 0;
-        //foreach (Order order in orders)
+        double sum = 0;
+        foreach(var order in orders)
         {
-        //    sum += order.getPrice();
+            sum += order.getPrice();
         }
-        //sum = sum / orders.Count;
-        Console.WriteLine("The average cost of orders are:" + sum);
+        double avg = sum / orders.Count;
+
+        Console.WriteLine($"The average price is: {avg}");
     }
     public void showRegisteredUsers()
     {
-        //todo
-        Console.WriteLine("The number of registered users are: ");
+        List<string> users = File.ReadAllLines("users.txt").ToList();
+        Console.WriteLine($"The number of registered users are: {users.Count} ");       
+    }
+
+    public void HighestPrice()
+    {
+        int max = 0;
+        foreach(var order in orders)
+        {
+            if(order.getPrice() > max)
+            {
+                max = order.getPrice();
+            }
+        }
+        Console.WriteLine($"Highest price on the menu: {max}");
+    }
+
+    public void LowestPrice()
+    {
+        int min = orders[0].getPrice();
+        foreach (var order in orders)
+        {
+            if (order.getPrice() < min)
+            {
+                min = order.getPrice();
+            }
+        }
+        Console.WriteLine($"Highest price on the menu: {min}");
+
+
     }
 }
