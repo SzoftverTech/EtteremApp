@@ -152,4 +152,13 @@ public class Menu
 		int idx = Convert.ToInt32(Console.ReadLine());
 		foodList.RemoveAt(idx);
 	}
+	public int getPrice(string name)
+    {
+		for(int i =0;i<foodList.Count;i++)
+        {
+			if (foodList[i].getName() == name)
+				return foodList[i].getPrice();
+        }
+		return 0;
+    }
 }
