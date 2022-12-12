@@ -3,11 +3,14 @@ using System.Collections.Generic;
 
 public class Menu
 {
-	public List<Food> foodList = new List<Food>();
+	private List<Food> foodList = new List<Food>();
 	public Menu()
 	{
 
 	}
+
+
+
 	public void listFood()
     {
 		for(int i =0;i< foodList.Count();i++)
@@ -18,6 +21,13 @@ public class Menu
 			Console.WriteLine(); 
 		}
     }
+
+	public void editMenu()
+	{
+		Console.WriteLine("How would you like to edit the menu?");
+		Console.WriteLine("1 - ");
+	}
+
 	public void addItem(string name, int price)
     {
 		Console.WriteLine("Give the name of the new food:");
