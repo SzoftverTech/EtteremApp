@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Dani\\.nuget\\packages\\": {},
+    "C:\\Users\\Acs\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dani\\Documents\\Suli\\Szoftvertechnológia\\Beadandó\\Komplett projekt\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
+      "projectUniqueName": "C:\\Users\\Acs\\Desktop\\Project\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
       "projectName": "EtteremApp",
-      "projectPath": "C:\\Users\\Dani\\Documents\\Suli\\Szoftvertechnológia\\Beadandó\\Komplett projekt\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
-      "packagesPath": "C:\\Users\\Dani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dani\\Documents\\Suli\\Szoftvertechnológia\\Beadandó\\Komplett projekt\\EtteremApp\\EtteremApp\\EtteremApp\\obj\\",
+      "projectPath": "C:\\Users\\Acs\\Desktop\\Project\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
+      "packagesPath": "C:\\Users\\Acs\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Acs\\Desktop\\Project\\EtteremApp\\EtteremApp\\EtteremApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Acs\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,7 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files\\dotnet\\library-packs": {}
       },
       "frameworks": {
         "net6.0": {
