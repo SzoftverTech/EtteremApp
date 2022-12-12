@@ -5,6 +5,7 @@ public abstract class Person
 	protected string name;
 	protected string email;
 	protected string password;
+	protected int privilege;
 	public Person(string name, string email, string password)
 	{
 		this.name = name;

@@ -2,6 +2,7 @@
 
 public class Manager : Person
 {
+    int privilege = 3;
     public Manager(string name, string email, string password) : base(name, email, password) { }
 
     public void inputAction()
@@ -9,7 +10,7 @@ public class Manager : Person
         Console.WriteLine("What would you like to do?");
         Console.WriteLine("1 - View the Menu");
         Console.WriteLine("2 - Edit the Menu");
-        Console.WriteLine("3 - View the Information about the restaurant");
+        Console.WriteLine("3 - View the information about the restaurant");
         Console.WriteLine("4 - Show statistics");
         Console.WriteLine("5 - Edit customer data");
 

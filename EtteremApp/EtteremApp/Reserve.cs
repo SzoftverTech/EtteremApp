@@ -8,7 +8,7 @@ class Reserve
 {
     private List<Table> tableList = new List<Table>(10);
 
-    Reserve()
+    public Reserve()
     {
         for (int i  =0;i < 10;i++)
         {

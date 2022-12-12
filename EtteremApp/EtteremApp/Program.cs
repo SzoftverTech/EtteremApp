@@ -2,8 +2,6 @@
 class main {
     static void Main(string[] args)
     {
-        UserList userList = new UserList();
-        Guest g1 = new Guest("","","");
         int input;
         do
         {
@@ -13,12 +11,12 @@ class main {
             {
                 case 1:
                     {
-                        g1.register(userList);
+                        
                         break;
                     }
                 case 3:
                     {
-                        g1.getInfo();
+                        
                         break;
                     }
 

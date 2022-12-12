@@ -6,11 +6,78 @@ using System.Threading.Tasks;
 
 class RegisteredUser : Person
 {
+    int privilege = 1;
     string phoneNumber;
     string address;
     List<List<Food>> orderList = new List<List<Food>>();
     public RegisteredUser(string name, string email, string password) : base(name, email, password) { }
 
+    public void inputAction()
+    {
+        Console.WriteLine("What would you like to do?");
+        Console.WriteLine("1 - View the Menu");
+        Console.WriteLine("2 - Change credentials");
+        Console.WriteLine("3 - View the Information about the restaurant");
+        Console.WriteLine("4 - Order food");
+        Console.WriteLine("5 - Reserve table");
+
+        Console.WriteLine("Input the chosen number: ");
+        int op = Convert.ToInt32(Console.ReadLine());
+
+        while (op < 1 && op > 5)
+            Choice(op);
+
+    }
+
+    public void Choice(int number)
+    {
+        Menu menu = new Menu();
+
+        switch (number)
+        {
+            case 1:
+                {
+                    //Listing the menu
+                    menu.listFood();
+                    break;
+                }
+
+            case 2:
+                {
+                    //Change data
+                    dataChange();
+                    break;
+                }
+
+            case 3:
+                {
+                    //View res info
+                    getInfo();
+                    break;
+                }
+
+            case 4:
+                {
+                    //order Food
+                    orderFood();
+                    break;
+                }
+
+            case 5:
+                {
+                    //reserve Table
+
+                    break;
+                }
+
+            default:
+                {
+                    Console.WriteLine("Wrong number, try again.");
+                    break;
+                }
+        }
+
+    }
 
     private string getAddress()
     {
@@ -99,6 +166,13 @@ class RegisteredUser : Person
         res = Convert.ToChar(Console.ReadLine());
         if (res == 'y')
             setAddress();
+    }
+    public void reserveTable()
+    {
+        Reserve reserve = new Reserve();
+        Console.WriteLine("Please give which table to reserve:");
+        reserve.listTable();
+        Console.WriteLine("Reservation succesful.");
     }
 }
 

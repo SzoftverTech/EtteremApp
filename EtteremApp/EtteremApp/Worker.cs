@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 class Worker : Person
 {
+    int privilege = 2;
     public Worker(string name, string email, string password) : base(name, email, password) { }
     public  void modifyMenu()
     {
-        Menu menu = new Menu();
+        Menu currentMenu = new Menu();
 
         Console.WriteLine("Please choose what would you like to do:");
         Console.WriteLine("1: Add new item");
@@ -21,17 +22,17 @@ class Worker : Person
         {
             case 1:
                 {
-                    m1.addItem();
+                    //currentMenu.addItem();
                     break;
                 }
             case 2:
                 {
-                    m1.updateItem();
+                    //currentMenu.updateItem();
                     break;
                 }
             case 3:
                 {
-                    m1.deleteItem();
+                    //currentMenu.deleteItem();
                     break;
                 }
             default:

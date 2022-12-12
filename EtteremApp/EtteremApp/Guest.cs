@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 class Guest : Person
 {
+    int privilege = 0;
     public Guest(string name, string email, string password) : base(name, email, password) { }
 
     public void register(UserList userList)

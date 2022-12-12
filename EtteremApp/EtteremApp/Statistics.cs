@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 class Statistics
 {
-    private List<Food> orders = new List<Order>();
+    //private List<Food> orders = new List<Order>();
 
     public void showAveragePrice()
     {
         int sum = 0;
-        foreach (Order order in orders)
+        //foreach (Order order in orders)
         {
-            sum += order.getPrice();
+        //    sum += order.getPrice();
         }
-        sum = sum / orders.Count;
+        //sum = sum / orders.Count;
         Console.WriteLine("The average cost of orders are:" + sum);
     }
     public void showRegisteredUsers()
