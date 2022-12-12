@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Menu
 {
-	private List<Food> foodList = new List<Food>();
+	private Dictionary<int,Food> foodDict= new Dictionary<int,Food>();
 	public Menu()
 	{
 
@@ -13,13 +13,9 @@ public class Menu
 
 	public void listFood()
     {
-		for(int i =0;i< foodList.Count();i++)
-        {
-            Console.Write(foodList[i].getName());
-			Console.Write(foodList[i].getPrice());
-			Console.Write(foodList[i].getId());
-			Console.WriteLine(); 
-		}
+		for(int i =0;i< foodDict.Count();i++)
+			if(foodDict.ContainsKey(i))
+				Console.WriteLine(i+" " + foodDict[i].getName()+" " + foodDict[i].getPrice());
     }
 
 	public void editMenu()
@@ -78,34 +74,35 @@ public class Menu
 		int newPrice = Convert.ToInt32(Console.ReadLine());
 
 		Food newFood = new Food(newName, newPrice);
-		foodList.Add(newFood);
+
+		//?
+		foodDict.Add(foodDict.Count(), newFood);
     }
+
 	private void updateItem()
     {
-		Console.WriteLine("Please choose which item would you like to update:");
+		Console.WriteLine("Please choose which item would you like to change:");
 
 		listFood();
 
 		int inputId = Convert.ToInt32(Console.ReadLine());
+		
+		while(!foodDict.ContainsKey(inputId))
+		{
+			Console.WriteLine("Wrong number, please choose one thats in the list!");
+
+            Console.WriteLine("Please choose which item would you like to update:");
+            inputId = Convert.ToInt32(Console.ReadLine());
+        }
 
 		Console.WriteLine("Please choose what would you like to update:");
 		Console.WriteLine("1: Name");
 		Console.WriteLine("2: Price");
 		Console.WriteLine("3: Both");
 
-		int idx = 0;
-		Food myFood = new Food(" ", 0);
-
-		for (int i = 0;i< foodList.Count(); i++)
-        {
-			if (foodList[i].getId() == inputId)
-            {
-				myFood = foodList[i];
-				idx = i;
-			}
-				
-				
-        }
+		
+		
+		Food myFood = foodDict[inputId];
 
 		int option = Convert.ToInt32(Console.ReadLine());
 
@@ -113,24 +110,24 @@ public class Menu
 		{
 			case 1:
 				{
-					Console.WriteLine("Please give the new name:");
+					Console.Write("Please give the new name: ");
 					string newName = Console.ReadLine();
 					myFood.setName(newName);
 					break;
 				}
 			case 2:
                 {
-					Console.WriteLine("Please give the new price:");
+					Console.Write("Please give the new price: ");
 					int newPrice = Convert.ToInt32(Console.ReadLine());
 					myFood.setPrice(newPrice);
 					break;
                 }
 			case 3:
                 {
-					Console.WriteLine("Please give the new name:");
+					Console.Write("Please give the new name: ");
 					string newName = Console.ReadLine();
 					myFood.setName(newName);
-					Console.WriteLine("Please give the new price:");
+					Console.Write("Please give the new price: ");
 					int newPrice = Convert.ToInt32(Console.ReadLine());
 					myFood.setPrice(newPrice);
 					break;
@@ -141,8 +138,10 @@ public class Menu
 					break;
                 }
 		}
-		foodList[idx] = myFood;
+
+		foodDict[inputId] = myFood;
 	}
+
 	private void deleteItem()
     {
 		Console.WriteLine("Please choose which food to delete:");
@@ -150,15 +149,13 @@ public class Menu
 		listFood();
 
 		int idx = Convert.ToInt32(Console.ReadLine());
-		foodList.RemoveAt(idx);
+		foodDict.Remove(idx);
 	}
-	public int getPrice(string name)
+
+	public Food getFood(int id)
     {
-		for(int i =0;i<foodList.Count;i++)
-        {
-			if (foodList[i].getName() == name)
-				return foodList[i].getPrice();
-        }
-		return 0;
+		if(foodDict.ContainsKey(id))
+			return foodDict[id];
+		return null;
     }
 }

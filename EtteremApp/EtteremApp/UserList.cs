@@ -7,17 +7,21 @@ using System.IO;
 
 class UserList
 {
+    //Kell-e?
+    /*a mainben bejelentkezésnél behúzni, hogy tartalmazza-e*/
     private List<Person> personList = new List<Person>();
     public UserList()
     {
         // beolvassa a fájból az embereket adatokkal együtt
-        FileStream f = new FileStream("users.txt", FileMode.Append);
+        FileStream f = new FileStream("users.txt", FileMode.Open);
         StreamReader sr = new StreamReader(f);
         while(!sr.EndOfStream)
         {
             string line = sr.ReadLine();
             string[] spl = line.Split(",");
-            //Person tmp=new Person(spl[0], spl[0], spl[0]);
+
+            //Boti old meg  thx :)
+            //Person tmp=new Person();
             //personList.Add(tmp);
         }
         sr.Close();
@@ -26,7 +30,7 @@ class UserList
     ~UserList()
     {
         //kiírja őket ha vége a progamnak
-        FileStream fs = new FileStream("users.txt", FileMode.Create);
+        FileStream fs = new FileStream("users.txt", FileMode.Append);
         StreamWriter sw = new StreamWriter(fs);
         sw.WriteLine(personList[0].Name);
         sw.Close();

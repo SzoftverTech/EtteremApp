@@ -4,7 +4,6 @@ public class Food
 {
 	private string name;
 	private int price;
-	private int id;
 
 	public Food(string name, int price)
 	{
@@ -26,9 +25,5 @@ public class Food
 	public void setName(string name)
     {
 		this.name = name;
-    }
-	public int getId()
-    {
-		return id;
     }
 }

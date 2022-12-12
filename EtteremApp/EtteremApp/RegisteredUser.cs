@@ -6,39 +6,99 @@ using System.Threading.Tasks;
 
 class RegisteredUser : Person
 {
-    int phoneNumber;
-    int cardNumber;
+    string phoneNumber;
     string address;
-    List<Order> orderList = new List<Order>();
+    List<List<Food>> orderList = new List<List<Food>>();
     public RegisteredUser(string name, string email, string password) : base(name, email, password) { }
+
+
+    private string getAddress()
+    {
+        return address;
+    }
+
+    private void setAddress()
+    {
+        Console.Write("Please add your address: ");
+        address = Console.ReadLine();
+    }
+
+    private string getPhoneNumber()
+    {
+        return phoneNumber;
+    }
+
+    private void setPhoneNumber()
+    {
+        Console.Write("Please add your phone number: ");
+        phoneNumber = Console.ReadLine();
+    }
+
+
 
     public void orderFood()
     {
-        Order newOrder = new Order();
+        List<Food> tmp=new List<Food>();
         Menu currentMenu = new Menu();
         currentMenu.listFood();
 
-        Console.WriteLine("Please type the name of the food you would like to order:");
+        Console.Write("Please type the id of the food you would like to order: ");
 
-        string input = Console.ReadLine();
-        newOrder.addItem(new Food(input, currentMenu.getPrice(input)));
+        int input = Convert.ToInt32(Console.ReadLine());
+        Food back = currentMenu.getFood(input);
+
+        while(back == null)
+        {
+            Console.Write("Wrong choice, choose again: ");
+            input = Convert.ToInt32(Console.ReadLine());
+            back = currentMenu.getFood(input);
+        }
+
+        tmp.Add(back);
+
 
         do
         {
-            Console.WriteLine("Would you like to choose anything else? (1:yes, 2:no)");
+            Console.Write("Would you like to choose anything else? (1:yes, 2:no): ");
             int option = Convert.ToInt32(Console.ReadLine());
             if (option == 1)
             {
-                Console.WriteLine("Please type the name of the food you would like to order:");
+                Console.Write("Please type the id of the food you would like to order: ");
 
-                input = Console.ReadLine();
-                newOrder.addItem(new Food(input, currentMenu.getPrice(input)));
+                input = Convert.ToInt32(Console.ReadLine());
+                back = currentMenu.getFood(input);
+
+                while (back == null)
+                {
+                    Console.Write("Wrong choice, choose again: ");
+                    input = Convert.ToInt32(Console.ReadLine());
+                    back = currentMenu.getFood(input);
+                }
+
+                tmp.Add(back);
             }
         } while (!input.Equals(2));
 
-        orderList.Add(newOrder);
-        // fizetés
+        orderList.Add(tmp);
+
+
+        Console.WriteLine("Delivery address: "+getAddress());
+        Console.WriteLine("The delivery guy will call you on this number: "+getPhoneNumber());
+        
         Console.WriteLine("Thank you for your order!");
+    }
+
+    public void dataChange()
+    {
+        Console.Write("Would you like to change your phone number? (y or n) ");
+        char res = Convert.ToChar(Console.ReadLine());
+        if (res == 'y')
+            setPhoneNumber();
+
+        Console.Write("Would you like to change your address? (y or n) ");
+        res = Convert.ToChar(Console.ReadLine());
+        if (res == 'y')
+            setAddress();
     }
 }
 

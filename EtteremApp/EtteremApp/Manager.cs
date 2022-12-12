@@ -79,10 +79,4 @@ public class Manager : Person
     {
 
     }
-
-    void modifyMenu()
-    {
-        Console.WriteLine("Choose a menu item to edit");
-        string food = Console.ReadLine();
-    }
 }
