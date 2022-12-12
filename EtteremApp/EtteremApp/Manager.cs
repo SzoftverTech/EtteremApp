@@ -37,25 +37,32 @@ public class Manager : Person
             case 2:
                 {
                     //Editing menu
-                    
+                    menu.editMenu();
                     break;
                 }
 
             case 3:
                 {
                     //View res menu
+                    getInfo();
                     break;
                 }
 
             case 4:
                 {
                     //Show statistics
+                    Statistics stat=new Statistics();
+                    stat.showAveragePrice();
+                    stat.showRegisteredUsers();
                     break;
                 }
 
             case 5:
                 {
                     //Edit customer data
+
+                    //...
+
                     break;
                 }
 

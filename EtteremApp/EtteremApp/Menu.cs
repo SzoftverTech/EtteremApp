@@ -25,10 +25,49 @@ public class Menu
 	public void editMenu()
 	{
 		Console.WriteLine("How would you like to edit the menu?");
-		Console.WriteLine("1 - ");
+		Console.WriteLine("1 - Adding a new item");
+		Console.WriteLine("2 - Updating an existing item");
+		Console.WriteLine("3 - Delete an item");
+
+		Console.WriteLine("Chosen number: ");
+		int num=Convert.ToInt32(Console.ReadLine());
+
+		while (num < 1 && num > 3)
+		{
+			switch (num)
+			{
+				case 1:
+					{
+						//Add
+						addItem();
+						break;
+					}
+
+				case 2:
+					{
+						//Update
+						updateItem();
+						break;
+					}
+
+				case 3:
+					{
+						//Delete
+						deleteItem();
+						break;
+					}
+
+				default:
+					{
+						//Else
+						Console.WriteLine("Wrong choice, try again.");
+						break;
+					}
+			}
+		}
 	}
 
-	public void addItem(string name, int price)
+	private void addItem()
     {
 		Console.WriteLine("Give the name of the new food:");
 
@@ -41,7 +80,7 @@ public class Menu
 		Food newFood = new Food(newName, newPrice);
 		foodList.Add(newFood);
     }
-	public void updateItem()
+	private void updateItem()
     {
 		Console.WriteLine("Please choose which item would you like to update:");
 
@@ -104,7 +143,7 @@ public class Menu
 		}
 		foodList[idx] = myFood;
 	}
-	public void deleteItem()
+	private void deleteItem()
     {
 		Console.WriteLine("Please choose which food to delete:");
 
