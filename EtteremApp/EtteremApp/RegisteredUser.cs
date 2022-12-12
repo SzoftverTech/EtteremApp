@@ -195,5 +195,6 @@ class RegisteredUser : Person
         reserve.listTable();
         Console.WriteLine("Reservation succesful.");
     }
+
 }
 

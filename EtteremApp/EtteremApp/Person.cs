@@ -13,10 +13,34 @@ public abstract class Person
 		this.password = password;
 	}
 	public Person() { }
-	public string Name { get; set; }
-	public string Email { get; set; }
-	public string Password { get; set; }
-
+	public string getName()
+    {
+		return name;
+    }
+	public string getPassword()
+    {
+		return password;
+    }
+	public string getEmail()
+    {
+		return email;
+    }
+	public void setName(string name)
+    {
+		this.name = name;
+    }
+	public void setPassword(string password)
+	{
+		this.password = password;
+	}
+	public void setEmail(string email)
+	{
+		this.email = email;
+	}
+	public int getPrivilege()
+    {
+		return privilege;
+    }
 	public void login()
 	{
 		//...

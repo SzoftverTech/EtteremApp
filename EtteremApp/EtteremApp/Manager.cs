@@ -26,6 +26,7 @@ public class Manager : Person
 
     public void Choice(int number)
     {
+        //read the current menu
         Menu menu = new Menu();
 
         switch (number)
@@ -62,10 +63,50 @@ public class Manager : Person
 
             case 5:
                 {
-                    //Edit customer data
-
-                    //...
-
+                    List<Person> tmp = Process();
+                    Console.WriteLine("Select a customer by ID:");
+                    ListUsersForChoose(tmp);
+                    Console.WriteLine($"Selected id: ");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    if (id < 0 || id > tmp.Count)
+                    {
+                        Console.WriteLine("Invalid ID!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("What data to edit? (name,email,password)");
+                        string hlp = Console.ReadLine();
+                        switch (hlp)
+                        {
+                            case "name":
+                                {
+                                    Console.WriteLine("What is the new name?");
+                                    string hname = Console.ReadLine();
+                                    tmp[id].setName(hname);
+                                    break;
+                                }
+                            case "email":
+                                {
+                                    Console.WriteLine("What is the new email?");
+                                    string hemail = Console.ReadLine();
+                                    tmp[id].setEmail(hemail);
+                                    break;
+                                }
+                            case "password":
+                                {
+                                    Console.WriteLine("What is the new password?");
+                                    string hpass = Console.ReadLine();
+                                    tmp[id].setPassword(hpass);
+                                    break;
+                                }
+                            default:
+                                {
+                                    Console.WriteLine("Inavlid property!");
+                                    break;
+                                }
+                        }
+                        Console.WriteLine("Name property has been set for the user!");
+                    }
                     break;
                 }
 
@@ -78,8 +119,40 @@ public class Manager : Person
         inputAction();
     }
 
-    public void Login()
-    {
 
+    private List<Person> Process()
+    {
+        List<Person> tmp = new List<Person>();
+        string[] read = File.ReadAllLines("users.txt");
+        for (int i = 0; i < read.Length; i++)
+        {
+            string[] splitted = read[i].Split(',');
+            //name,email,pass 
+            string name, mail, pass;
+            name = splitted[0];
+            mail = splitted[1];
+            pass = splitted[2];
+            tmp.Add(new RegisteredUser(name, mail, pass));
+        }
+        return tmp;
+
+
+    }
+    private void ListUsersForChoose(List<Person> tmp)
+    {
+        for (int i = 0; i < tmp.Count(); i++)
+        {
+            Console.WriteLine($"{i}. {tmp[i].getName()}");
+        }
+    }
+
+    private void WriteNewUsers(List<Person> hlper)
+    {
+        string[] tofile = new string[hlper.Count];
+
+        for (int i = 0; i < hlper.Count; i++)
+            tofile[i] = hlper[i].getName() + "," + hlper[i].getEmail() + "," + hlper[i].getPassword() + "," + hlper[i].getPrivilege();
+
+        File.WriteAllLines("users.txt", tofile);
     }
 }
