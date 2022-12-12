@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 class UserList
 {
@@ -10,11 +11,16 @@ class UserList
     public UserList()
     {
         // beolvassa a fájból az embereket adatokkal együtt
-        //StreamReader sr = new StreamReader("users.txt");
-        //for (int i = 0;sr.EndOfStream != false; i++)
-        //{
-        //    
-        //}
+        FileStream f = new FileStream("users.txt", FileMode.Append);
+        StreamReader sr = new StreamReader(f);
+        while(!sr.EndOfStream)
+        {
+            string line = sr.ReadLine();
+            string[] spl = line.Split(",");
+            //Person tmp=new Person(spl[0], spl[0], spl[0]);
+            //personList.Add(tmp);
+        }
+            
     }
     ~UserList()
     {
