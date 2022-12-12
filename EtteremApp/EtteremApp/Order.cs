@@ -15,4 +15,8 @@ class Order
     {
         return price;
     }
+    public void addItem(Food f1)
+    {
+        itemList.Add(f1);
+    }
 }
