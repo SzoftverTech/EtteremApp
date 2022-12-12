@@ -20,7 +20,8 @@ class UserList
             //Person tmp=new Person(spl[0], spl[0], spl[0]);
             //personList.Add(tmp);
         }
-            
+        sr.Close();
+        f.Close();
     }
     ~UserList()
     {
