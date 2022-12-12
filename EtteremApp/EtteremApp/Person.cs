@@ -12,6 +12,7 @@ public abstract class Person
 		this.email = email;
 		this.password = password;
 	}
+	public Person() { }
 	public string Name { get; set; }
 	public string Email { get; set; }
 	public string Password { get; set; }
