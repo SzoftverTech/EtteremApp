@@ -7,11 +7,7 @@ class main {
         int input;
         do
         {
-            Console.WriteLine("Please choose a menu item:");
-            Console.WriteLine("1: Register");
-            Console.WriteLine("2: Login");
-            Console.WriteLine("3: View Contacts");
-            Console.WriteLine("99: Exit");
+            
             input = Convert.ToInt32(Console.ReadLine());
             switch (input)
             {

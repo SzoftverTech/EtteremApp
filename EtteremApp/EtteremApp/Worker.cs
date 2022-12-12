@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 class Worker : Person
 {
     public Worker(string name, string email, string password) : base(name, email, password) { }
-    public void modifyMenu(Menu m1)
+    public  void modifyMenu()
     {
+        Menu menu = new Menu();
+
         Console.WriteLine("Please choose what would you like to do:");
         Console.WriteLine("1: Add new item");
         Console.WriteLine("2: Update existing item");

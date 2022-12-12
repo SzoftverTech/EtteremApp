@@ -26,4 +26,5 @@ public abstract class Person
 		Console.WriteLine("Email: restaurant@gmail.com");
 		Console.WriteLine("Mobile: 062012345679");
     }
+	public void modifyMenu(Menu m1) { }
 }

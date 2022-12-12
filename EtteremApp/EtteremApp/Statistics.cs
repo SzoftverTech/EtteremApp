@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 class Statistics
 {
-    private List<Order> orders = new List<Order>();
+    private List<Food> orders = new List<Order>();
 
     public void showAveragePrice()
     {

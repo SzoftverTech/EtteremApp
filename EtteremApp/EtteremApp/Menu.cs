@@ -6,7 +6,13 @@ public class Menu
 	private Dictionary<int,Food> foodDict= new Dictionary<int,Food>();
 	public Menu()
 	{
-
+		string[] wholeInput = File.ReadAllLines("menu.txt");
+		foreach (string input in wholeInput)
+		{
+			string[] temp = input.Split(',');
+			string name = temp[0];
+			int ar = Convert.ToInt32(temp[1]);
+		}
 	}
 
 
