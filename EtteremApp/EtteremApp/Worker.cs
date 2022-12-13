@@ -22,6 +22,8 @@ class Worker : Person
         Console.WriteLine("2: Edit menu");
         Console.WriteLine("3: Show orders");
         Console.WriteLine("4: Show reservations");
+        Console.WriteLine("5: Exit");
+
         //ide amiket kell neki
         int option = Convert.ToInt32(Console.ReadLine());
         switch (option)
@@ -41,6 +43,16 @@ class Worker : Person
                     showOrders();
                     break;
                 }
+            case 4:
+                {
+                    ReservationList();
+                    break;
+                }
+            case 5:
+                {
+                    Environment.Exit(0);
+                    break;
+                }
             default:
                 {
                     Console.WriteLine("No proper option has been selected!");
@@ -49,8 +61,17 @@ class Worker : Person
         }
 
         Console.WriteLine("Your request has been processed.");
+        inputAction();
     }
 
+    private void ReservationList()
+    {
+        string[] reservs = File.ReadAllLines("reserves.txt");
+        foreach (string reservation in reservs)
+        {
+            Console.WriteLine(reservation);
+        }
+    }
     private void showOrders()
     {
         FileStream fs = new FileStream("orders.txt", FileMode.Open);

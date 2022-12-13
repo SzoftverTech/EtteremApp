@@ -35,10 +35,27 @@ class Reserve
         if (tableList[idx].isAvailable())
         {
             tableList[idx].setAvailablity(false);
-            Console.WriteLine("Sikeres foglalás!");
+            Console.WriteLine("What date to reserve: (hour minute)");
+            string date = Console.ReadLine();
+            
+
+            //if already contains
+            List<string> hlp = File.ReadAllLines("reserves.txt").ToList();
+
+            if(!hlp.Contains(date))
+            {            
+            List<string> res = new List<string>();           
+            res.Add((idx+1) +$". table is reserved for {date} this date!");
+            File.AppendAllLines("reserves.txt",res);
+            Console.WriteLine($"Successful reserve for {date} date!");
+            }
+            else
+            {
+                Console.WriteLine("Date is already reserved!");
+            }
         }
         else
-            Console.WriteLine("Már foglalt az asztal!");
+            Console.WriteLine("Already reserved!");
     }
 }
 

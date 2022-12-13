@@ -2,3 +2,4 @@ Leves,5000
 Porkolt,3000
 Gyros,4000
 Kenyer,1000
+kecske,1530

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ class RegisteredUser : Person
     int privilege = 1;
     string phoneNumber = null;
     string address = null;
+    int Discount = 0;
     List<List<Food>> orderList = new List<List<Food>>();
     // rendelések listázása
     public RegisteredUser(string name, string email, string password) : base(name, email, password) { }
@@ -122,6 +124,15 @@ class RegisteredUser : Person
         return privilege;
     }
 
+    public void setDiscount(int dc)
+    {
+        this.Discount = dc;
+    }
+
+    public int getDiscount()
+    {
+        return this.Discount;
+    }
 
     public void orderFood()
     {
@@ -129,7 +140,7 @@ class RegisteredUser : Person
         Menu currentMenu = new Menu();
         currentMenu.listFood();
         int price = 0;
-
+        Console.WriteLine($"Your Discount is: {UserDiscount()}");
         Console.Write("Please type the id of the food you would like to order: ");
 
         int input = Convert.ToInt32(Console.ReadLine());
@@ -176,12 +187,20 @@ class RegisteredUser : Person
         } while (!option.Equals(2));
 
         orderList.Add(tmp);
-
+        int sum = 0;
         File.AppendAllText("orders.txt", "\n" + getName() + ",");
         for (int i = 0; i < tmp.Count; i++)
         {
             File.AppendAllText("orders.txt", tmp[i].getName() + ",");
+            sum += tmp[i].getPrice();
         }
+
+        int dc = sum / 100;
+        setDiscount(dc);
+        File.AppendAllText("discount.txt", "\n" + this.name + "," + this.Discount);
+
+        setDiscount(dc);
+        Console.WriteLine($"\nYou have {UserDiscount()} points as discount!");
         File.AppendAllText("orders.txt", Convert.ToString(price));
 
         Console.WriteLine("Delivery address: " + getAddress());
@@ -201,6 +220,21 @@ class RegisteredUser : Person
         res = Convert.ToChar(Console.ReadLine());
         if (res == 'y')
             setAddress();
+    }
+
+    public int UserDiscount()
+    {
+        string[] s = File.ReadAllLines("discount.txt");
+        
+        for(int i = 0; i < s.Length;i ++)
+        {
+            string [] splitted = s[i].Split(',');
+            if (splitted[0] == getName())
+            {
+                return getDiscount();
+            }          
+        }
+        return 0;
     }
 
 }
