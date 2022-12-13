@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 class RegisteredUser : Person
 {
+
+    static Reserve tableList = new Reserve();
     int privilege = 1;
     string phoneNumber = null;
     string address = null;
@@ -59,10 +61,11 @@ class RegisteredUser : Person
                     break;
                 }
 
+
             case 4:
                 {
                     //order Food
-                    if(phoneNumber == null || address == null)
+                    if (phoneNumber == null || address == null)
                     {
                         Console.WriteLine("Please give your data first!");
                         break;
@@ -73,7 +76,7 @@ class RegisteredUser : Person
 
             case 5:
                 {
-                    //reserve Table
+                    tableList.reserveTable();
 
                     break;
                 }
@@ -83,12 +86,12 @@ class RegisteredUser : Person
                     break;
                 }
 
-                default:
-                    {
-                        Console.WriteLine("Wrong number, try again.");
-                        break;
-                    }
-            }
+            default:
+                {
+                    Console.WriteLine("Wrong number, try again.");
+                    break;
+                }
+        }
         inputAction();
     }
 
@@ -122,16 +125,18 @@ class RegisteredUser : Person
 
     public void orderFood()
     {
-        List<Food> tmp=new List<Food>();
+        List<Food> tmp = new List<Food>();
         Menu currentMenu = new Menu();
         currentMenu.listFood();
+        int price = 0;
 
         Console.Write("Please type the id of the food you would like to order: ");
 
         int input = Convert.ToInt32(Console.ReadLine());
         Food back = currentMenu.getFood(input);
+        price += back.getPrice();
 
-        while(back == null)
+        while (back == null)
         {
             Console.Write("Wrong choice, choose again: ");
             input = Convert.ToInt32(Console.ReadLine());
@@ -144,13 +149,13 @@ class RegisteredUser : Person
         do
         {
             Console.Write("Would you like to choose anything else? (1:yes, 2:no): ");
-            
+
             option = Convert.ToInt32(Console.ReadLine());
 
-            while (option < 1 || option >2)
+            while (option < 1 || option > 2)
                 option = Convert.ToInt32(Console.ReadLine());
-            
-            
+
+
             if (option == 1)
             {
                 Console.Write("Please type the id of the food you would like to order: ");
@@ -165,16 +170,23 @@ class RegisteredUser : Person
                     back = currentMenu.getFood(input);
                 }
 
+                price += back.getPrice();
                 tmp.Add(back);
             }
         } while (!option.Equals(2));
 
         orderList.Add(tmp);
 
+        File.AppendAllText("orders.txt", "\n" + getName() + ",");
+        for (int i = 0; i < tmp.Count; i++)
+        {
+            File.AppendAllText("orders.txt", tmp[i].getName() + ",");
+        }
+        File.AppendAllText("orders.txt", Convert.ToString(price));
 
-        Console.WriteLine("Delivery address: "+getAddress());
-        Console.WriteLine("The delivery guy will call you on this number: "+getPhoneNumber());
-        
+        Console.WriteLine("Delivery address: " + getAddress());
+        Console.WriteLine("The delivery guy will call you on this number: " + getPhoneNumber());
+
         Console.WriteLine("Thank you for your order!");
     }
 
@@ -189,13 +201,6 @@ class RegisteredUser : Person
         res = Convert.ToChar(Console.ReadLine());
         if (res == 'y')
             setAddress();
-    }
-    public void reserveTable()
-    {
-        Reserve reserve = new Reserve();
-        Console.WriteLine("Please give which table to reserve:");
-        reserve.listTable();
-        Console.WriteLine("Reservation succesful.");
     }
 
 }

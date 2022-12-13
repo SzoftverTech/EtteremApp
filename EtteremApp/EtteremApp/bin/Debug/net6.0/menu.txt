@@ -1,4 +1,4 @@
-kolbasz,50
-hurka,40
-leves,60
-kokakola,10
+Leves,5000
+Porkolt,3000
+Gyros,4000
+Kenyer,1000

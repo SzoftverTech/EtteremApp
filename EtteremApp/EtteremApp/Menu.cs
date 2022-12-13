@@ -6,25 +6,17 @@ public class Menu
 	private Dictionary<int,Food> foodDict= new Dictionary<int,Food>();
 	public Menu()
 	{
-		string[] wholeInput = File.ReadAllLines("menu.txt");
-		foreach (string input in wholeInput)
-		{
-			string[] temp = input.Split(',');
-			string name = temp[0];
-			int price = Convert.ToInt32(temp[1]);
-
-			Food tmp = new Food(name, price);
-			foodDict.Add(foodDict.Count + 1, tmp);
-		}
+		input();
 	}
-
-
 
 	public void listFood()
     {
-		for(int i =0;i< foodDict.Count();i++)
-			if(foodDict.ContainsKey(i))
-				Console.WriteLine(i+" " + foodDict[i].getName()+" " + foodDict[i].getPrice());
+		int i = 1;
+		foreach (Food food in foodDict.Values)
+		{
+			Console.WriteLine(i + " " + food.getName() + " " + food.getPrice());
+			i++;
+		}
     }
 
 	public void editMenu()
@@ -35,11 +27,14 @@ public class Menu
 		Console.WriteLine("3 - Delete an item");
 
 		Console.WriteLine("Chosen number: ");
-		int num=Convert.ToInt32(Console.ReadLine());
 
-		while (num < 1 && num > 3)
-		{
-			switch (num)
+		int num = Convert.ToInt32(Console.ReadLine());
+
+		while (num < 1 || num > 3)
+			num = Convert.ToInt32(Console.ReadLine());
+
+
+		switch (num)
 			{
 				case 1:
 					{
@@ -69,24 +64,10 @@ public class Menu
 						break;
 					}
 			}
-		}
+		
 	}
 
-	private void addItem()
-    {
-		Console.WriteLine("Give the name of the new food:");
 
-		string newName = Console.ReadLine();
-
-		Console.WriteLine("Give the price of the new food:");
-
-		int newPrice = Convert.ToInt32(Console.ReadLine());
-
-		Food newFood = new Food(newName, newPrice);
-
-		//?
-		foodDict.Add(foodDict.Count(), newFood);
-    }
 
 	private void updateItem()
     {
@@ -149,8 +130,26 @@ public class Menu
 		}
 
 		foodDict[inputId] = myFood;
+		listFood();
+		output();
 	}
 
+	private void addItem()
+	{
+		Console.WriteLine("Give the name of the new food:");
+
+		string newName = Console.ReadLine();
+
+		Console.WriteLine("Give the price of the new food:");
+
+		int newPrice = Convert.ToInt32(Console.ReadLine());
+
+		Food newFood = new Food(newName, newPrice);
+
+		foodDict.Add(foodDict.Count() + 1, newFood);
+		listFood();
+		output();
+	}
 	private void deleteItem()
     {
 		Console.WriteLine("Please choose which food to delete:");
@@ -159,6 +158,8 @@ public class Menu
 
 		int idx = Convert.ToInt32(Console.ReadLine());
 		foodDict.Remove(idx);
+		listFood();
+		output();
 	}
 
 	public Food getFood(int id)
@@ -167,4 +168,25 @@ public class Menu
 			return foodDict[id];
 		return null;
     }
+	public void input()
+    {
+		string[] wholeInput = File.ReadAllLines("menu.txt");
+		foreach (string input in wholeInput)
+		{
+			string[] temp = input.Split(',');
+			string name = temp[0];
+			int price = Convert.ToInt32(temp[1]);
+
+			Food tmp = new Food(name, price);
+			foodDict.Add(foodDict.Count + 1, tmp);
+		}
+	}
+	public void output()
+    {
+		File.Delete("menu.txt");
+		foreach (Food food in foodDict.Values)
+		{
+			File.AppendAllText("menu.txt", food.getName() + "," + food.getPrice() + "\n");
+		}
+	}
 }

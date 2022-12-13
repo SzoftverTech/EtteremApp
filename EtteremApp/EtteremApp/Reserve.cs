@@ -20,7 +20,7 @@ class Reserve
     {
         for (int i = 0; i < 10; i++)
         {
-            Console.WriteLine(tableList[i].getId());
+            Console.Write((tableList[i].getId()+1).ToString() + " ");
             if (tableList[i].isAvailable() == true)
                 Console.WriteLine("available");
             else
@@ -31,7 +31,7 @@ class Reserve
     {
         Console.WriteLine("Please give which table to reserve:");
         listTable();
-        int idx = Convert.ToInt32(Console.ReadLine());
+        int idx = Convert.ToInt32(Console.ReadLine()) -1;
         if (tableList[idx].isAvailable())
         {
             tableList[idx].setAvailablity(false);

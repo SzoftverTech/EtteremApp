@@ -51,7 +51,7 @@ public class Manager : Person
 
             case 3:
                 {
-                    //View res menu
+                    //View restaurant info
                     getInfo();
                     break;
                 }
@@ -105,7 +105,7 @@ public class Manager : Person
                                 }
                             default:
                                 {
-                                    Console.WriteLine("Inavlid property!");
+                                    Console.WriteLine("Invalid property!");
                                     break;
                                 }
                         }

@@ -1,0 +1,4 @@
+bence,leves,60
+bence,kolbasz,kolbasz,kolbasz,150
+bence,leves,60
+bence,hurka,kolbasz,90

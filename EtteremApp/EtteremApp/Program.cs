@@ -2,6 +2,7 @@
 class main {
     static void Main(string[] args)
     {
+        Menu menu1 = new Menu();
         int input = 0;
         int privilege = 0;
         string username = null;
@@ -59,6 +60,8 @@ class main {
             //worker
             case 2:
                 {
+                    Worker w1 = new Worker(username, password, email);
+                    w1.inputAction();
                     break;
                 }
             //manager
@@ -69,6 +72,7 @@ class main {
                     break;
                 }
         }
+        
     }
     static public int findUser(string username,string password, string email)
     {
