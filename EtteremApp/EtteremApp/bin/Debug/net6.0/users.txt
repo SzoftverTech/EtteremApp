@@ -4,3 +4,5 @@ dani,dani,dani,2
 asd,asd,asd,1
 sajtosteszta,asd,asd,1
 abcd,abcd,abcd,1
+tmp,tmp,tmp,1
+tmp2,tmp1,tmp1,1

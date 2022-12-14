@@ -1,5 +1,5 @@
 Leves,5000
 Porkolt,3000
 Gyros,4000
-Kenyer,1000
+Kenyer,2000
 Almale,1530

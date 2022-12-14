@@ -7,3 +7,4 @@ bence,kenyer,Leves, 2000
 bence,Leves,Leves,10000
 bence,Leves,Leves,10000
 bence,Leves,Leves,10000
+tmp1,Gyros,Leves,9000
