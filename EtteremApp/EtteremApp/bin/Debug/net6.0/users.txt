@@ -2,3 +2,5 @@ boti,boti,boti,3
 bence,bence,bence,1
 dani,dani,dani,2
 asd,asd,asd,1
+sajtosteszta,asd,asd,1
+abcd,abcd,abcd,1

@@ -29,8 +29,9 @@ class Reserve
     }
     public void reserveTable()
     {
-        Console.WriteLine("Please give which table to reserve:");
+        Console.WriteLine("-------------------------------------------------------");
         listTable();
+        Console.Write("Please give which table to reserve:");
         int idx = Convert.ToInt32(Console.ReadLine()) -1;
         if (tableList[idx].isAvailable())
         {
@@ -44,9 +45,9 @@ class Reserve
 
             if(!hlp.Contains(date))
             {            
-            List<string> res = new List<string>();           
-            res.Add((idx+1) +$". table is reserved for {date} this date!");
-            File.AppendAllLines("reserves.txt",res);
+                List<string> res = new List<string>();           
+                res.Add((idx+1) +$". table is reserved for {date} this date!");
+                File.AppendAllLines("reserves.txt",res);
             Console.WriteLine($"Successful reserve for {date} date!");
             }
             else

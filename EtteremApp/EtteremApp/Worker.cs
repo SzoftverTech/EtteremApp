@@ -17,12 +17,14 @@ class Worker : Person
     {
         Menu currentMenu = new Menu();
 
+        Console.WriteLine("-------------------------------------------------------");
         Console.WriteLine("Please choose what would you like to do:");
         Console.WriteLine("1: Display menu");
         Console.WriteLine("2: Edit menu");
         Console.WriteLine("3: Show orders");
         Console.WriteLine("4: Show reservations");
-        Console.WriteLine("5: Exit");
+        Console.WriteLine("5: Logout");
+        Console.WriteLine("6: Exit");
 
         //ide amiket kell neki
         int option = Convert.ToInt32(Console.ReadLine());
@@ -30,36 +32,49 @@ class Worker : Person
         {
             case 1:
                 {
+                    Console.WriteLine("-------------------------------------------------------");
                     currentMenu.listFood();
                     break;
                 }
             case 2:
                 {
+                    Console.WriteLine("-------------------------------------------------------");
                     currentMenu.editMenu();
                     break;
                 }
             case 3:
                 {
+                    Console.WriteLine("-------------------------------------------------------");
                     showOrders();
                     break;
                 }
             case 4:
                 {
+                    Console.WriteLine("-------------------------------------------------------");
                     ReservationList();
                     break;
                 }
+
             case 5:
+                {
+                    System.Diagnostics.Process.Start(System.AppDomain.CurrentDomain.FriendlyName);
+                    Environment.Exit(0);
+                    break;
+                }
+            case 6:
                 {
                     Environment.Exit(0);
                     break;
                 }
             default:
                 {
+                    Console.WriteLine("-------------------------------------------------------");
                     Console.WriteLine("No proper option has been selected!");
                     break;
                 }
         }
 
+        Console.WriteLine("-------------------------------------------------------");
         Console.WriteLine("Your request has been processed.");
         inputAction();
     }

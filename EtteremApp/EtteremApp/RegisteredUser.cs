@@ -19,18 +19,20 @@ class RegisteredUser : Person
 
     public override void inputAction()
     {
+        Console.WriteLine("-------------------------------------------------------");
         Console.WriteLine("What would you like to do?");
         Console.WriteLine("1 - View the Menu");
         Console.WriteLine("2 - Change credentials");
         Console.WriteLine("3 - View the Information about the restaurant");
         Console.WriteLine("4 - Order food");
         Console.WriteLine("5 - Reserve table");
-        Console.WriteLine("6 - Exit");
+        Console.WriteLine("6 - Logout");
+        Console.WriteLine("7 - Exit");
 
         Console.WriteLine("Input the chosen number: ");
         int op = Convert.ToInt32(Console.ReadLine());
 
-        while (op < 1 || op > 6)
+        while (op < 1 || op > 7)
             op = Convert.ToInt32(Console.ReadLine());
 
         Choice(op);
@@ -45,6 +47,7 @@ class RegisteredUser : Person
                 {
                     //Listing the menu
                     Menu menu = new Menu();
+                    Console.WriteLine("-------------------------------------------------------");
                     menu.listFood();
                     break;
                 }
@@ -52,6 +55,7 @@ class RegisteredUser : Person
             case 2:
                 {
                     //Change data
+                    Console.WriteLine("-------------------------------------------------------");
                     dataChange();
                     break;
                 }
@@ -69,20 +73,29 @@ class RegisteredUser : Person
                     //order Food
                     if (phoneNumber == null || address == null)
                     {
+                        Console.WriteLine("-------------------------------------------------------");
                         Console.WriteLine("Please give your data first!");
                         break;
                     }
+                    Console.WriteLine("-------------------------------------------------------");
                     orderFood();
                     break;
                 }
 
             case 5:
                 {
+                    Console.WriteLine("-------------------------------------------------------");
                     tableList.reserveTable();
 
                     break;
                 }
             case 6:
+                {
+                    System.Diagnostics.Process.Start(System.AppDomain.CurrentDomain.FriendlyName);
+                    Environment.Exit(0);
+                    break;
+                }
+            case 7:
                 {
                     Environment.Exit(0);
                     break;
@@ -90,6 +103,7 @@ class RegisteredUser : Person
 
             default:
                 {
+                    Console.WriteLine("-------------------------------------------------------");
                     Console.WriteLine("Wrong number, try again.");
                     break;
                 }
@@ -195,14 +209,22 @@ class RegisteredUser : Person
             sum += tmp[i].getPrice();
         }
 
+        int disc = useDiscount();
+        sum -= disc;
+
         int dc = sum / 100;
         setDiscount(dc);
         File.AppendAllText("discount.txt", "\n" + this.name + "," + this.Discount);
 
         setDiscount(dc);
         Console.WriteLine($"\nYou have {UserDiscount()} points as discount!");
-        File.AppendAllText("orders.txt", Convert.ToString(price));
 
+
+        
+        File.AppendAllText("orders.txt", Convert.ToString(price-disc));
+
+
+        Console.WriteLine("Your payment will be: " + (price-disc));
         Console.WriteLine("Delivery address: " + getAddress());
         Console.WriteLine("The delivery guy will call you on this number: " + getPhoneNumber());
 
@@ -220,6 +242,20 @@ class RegisteredUser : Person
         res = Convert.ToChar(Console.ReadLine());
         if (res == 'y')
             setAddress();
+    }
+
+    private int useDiscount()
+    {
+        Console.WriteLine("Would you like to use your discounts? (1: yes,2: no)");
+        int choice=Convert.ToInt32(Console.ReadLine());
+        int used = 0;
+        if (choice == 1)
+        {
+            Console.WriteLine("How many points would you like to use? (Every point is worth 50 Ft)");
+            used = Convert.ToInt32(Console.ReadLine());
+        }
+        setDiscount(getDiscount() - used);
+        return used*50;
     }
 
     public int UserDiscount()

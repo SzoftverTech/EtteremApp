@@ -8,8 +8,8 @@ class main {
         string username = null;
         string password = null;
         string email = null;
-        
 
+        Console.WriteLine("-------------------------------------------------------");
         Console.WriteLine("Please select an option:");
         Console.WriteLine("1: Login");
         Console.WriteLine("2: Continue as guest");
@@ -21,7 +21,8 @@ class main {
                 {
                     case 1:
                         {
-                            Console.WriteLine("Please give your email:");
+                        Console.WriteLine("-------------------------------------------------------");
+                        Console.WriteLine("Please give your email:");
                             email = Console.ReadLine();
                             Console.WriteLine("Please give your username:");
                             username = Console.ReadLine();
@@ -34,7 +35,8 @@ class main {
                         }
                     case 2:
                         {
-                            Guest g1 = new Guest();
+                        Console.WriteLine("-------------------------------------------------------");
+                        Guest g1 = new Guest();
                             g1.inputAction();
                             Console.WriteLine("Would you like to login? (1: yes, 2:no)");
                             int choice = Convert.ToInt32(Console.ReadLine());

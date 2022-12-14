@@ -21,12 +21,12 @@ public class Menu
 
 	public void editMenu()
 	{
-		Console.WriteLine("How would you like to edit the menu?");
+        Console.WriteLine("How would you like to edit the menu?");
 		Console.WriteLine("1 - Adding a new item");
 		Console.WriteLine("2 - Updating an existing item");
 		Console.WriteLine("3 - Delete an item");
 
-		Console.WriteLine("Chosen number: ");
+		Console.Write("Chosen number: ");
 
 		int num = Convert.ToInt32(Console.ReadLine());
 
@@ -38,29 +38,33 @@ public class Menu
 			{
 				case 1:
 					{
-						//Add
-						addItem();
+                    //Add
+                    Console.WriteLine("-------------------------------------------------------");
+                    addItem();
 						break;
 					}
 
 				case 2:
 					{
-						//Update
-						updateItem();
+                    //Update
+                    Console.WriteLine("-------------------------------------------------------");
+                    updateItem();
 						break;
 					}
 
 				case 3:
 					{
-						//Delete
-						deleteItem();
+                    //Delete
+                    Console.WriteLine("-------------------------------------------------------");
+                    deleteItem();
 						break;
 					}
 
 				default:
 					{
-						//Else
-						Console.WriteLine("Wrong choice, try again.");
+                    //Else
+                    Console.WriteLine("-------------------------------------------------------");
+                    Console.WriteLine("Wrong choice, try again.");
 						break;
 					}
 			}
@@ -71,21 +75,23 @@ public class Menu
 
 	private void updateItem()
     {
-		Console.WriteLine("Please choose which item would you like to change:");
-
+        Console.WriteLine("-------------------------------------------------------");
 		listFood();
-
-		int inputId = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("-------------------------------------------------------");
+        Console.Write("Please choose which item would you like to change: ");
+        int inputId = Convert.ToInt32(Console.ReadLine());
 		
 		while(!foodDict.ContainsKey(inputId))
 		{
-			Console.WriteLine("Wrong number, please choose one thats in the list!");
+            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine("Wrong number, please choose one thats in the list!");
 
-            Console.WriteLine("Please choose which item would you like to update:");
+            Console.Write("Please choose which item would you like to update: ");
             inputId = Convert.ToInt32(Console.ReadLine());
         }
 
-		Console.WriteLine("Please choose what would you like to update:");
+        Console.WriteLine("-------------------------------------------------------");
+        Console.WriteLine("Please choose what would you like to update:");
 		Console.WriteLine("1: Name");
 		Console.WriteLine("2: Price");
 		Console.WriteLine("3: Both");
@@ -100,21 +106,24 @@ public class Menu
 		{
 			case 1:
 				{
-					Console.Write("Please give the new name: ");
+                    Console.WriteLine("-------------------------------------------------------");
+                    Console.Write("Please give the new name: ");
 					string newName = Console.ReadLine();
 					myFood.setName(newName);
 					break;
 				}
 			case 2:
                 {
-					Console.Write("Please give the new price: ");
+                    Console.WriteLine("-------------------------------------------------------");
+                    Console.Write("Please give the new price: ");
 					int newPrice = Convert.ToInt32(Console.ReadLine());
 					myFood.setPrice(newPrice);
 					break;
                 }
 			case 3:
                 {
-					Console.Write("Please give the new name: ");
+                    Console.WriteLine("-------------------------------------------------------");
+                    Console.Write("Please give the new name: ");
 					string newName = Console.ReadLine();
 					myFood.setName(newName);
 					Console.Write("Please give the new price: ");
@@ -124,7 +133,8 @@ public class Menu
 				}
             default:
                 {
-					Console.WriteLine("No option has been selected!");
+                    Console.WriteLine("-------------------------------------------------------");
+                    Console.WriteLine("No option has been selected!");
 					break;
                 }
 		}

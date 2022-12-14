@@ -8,19 +8,24 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\abcbo\\.nuget\\packages\\": {}
+    "C:\\Users\\Acs\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SzoftTech\\Etterem\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
+      "projectUniqueName": "C:\\Users\\Acs\\Desktop\\Project\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
       "projectName": "EtteremApp",
-      "projectPath": "D:\\SzoftTech\\Etterem\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
-      "packagesPath": "C:\\Users\\abcbo\\.nuget\\packages\\",
-      "outputPath": "D:\\SzoftTech\\Etterem\\EtteremApp\\EtteremApp\\EtteremApp\\obj\\",
+      "projectPath": "C:\\Users\\Acs\\Desktop\\Project\\EtteremApp\\EtteremApp\\EtteremApp\\EtteremApp.csproj",
+      "packagesPath": "C:\\Users\\Acs\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Acs\\Desktop\\Project\\EtteremApp\\EtteremApp\\EtteremApp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\abcbo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Acs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,7 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files\\dotnet\\library-packs": {}
       },
       "frameworks": {
         "net6.0": {

@@ -7,18 +7,20 @@ public class Manager : Person
 
     public override void inputAction()
     {
+        Console.WriteLine("-------------------------------------------------------");
         Console.WriteLine("What would you like to do?");
         Console.WriteLine("1 - View the Menu");
         Console.WriteLine("2 - Edit the Menu");
         Console.WriteLine("3 - View the information about the restaurant");
         Console.WriteLine("4 - Show statistics");
         Console.WriteLine("5 - Edit customer data");
-        Console.WriteLine("6 - Exit");
+        Console.WriteLine("6 - Logout");
+        Console.WriteLine("7 - Exit");
 
-        Console.WriteLine("Input the chosen number: ");
+        Console.Write("Input the chosen number: ");
         int op = Convert.ToInt32(Console.ReadLine());
 
-        while (op < 1 || op > 6)
+        while (op < 1 || op > 7)
             op = Convert.ToInt32(Console.ReadLine());
 
         Choice(op);
@@ -38,6 +40,7 @@ public class Manager : Person
             case 1:
                 {
                     //Listing the menu
+                    Console.WriteLine("-------------------------------------------------------");
                     menu.listFood();
                     break;
                 }
@@ -45,6 +48,7 @@ public class Manager : Person
             case 2:
                 {
                     //Editing menu
+                    Console.WriteLine("-------------------------------------------------------");
                     menu.editMenu();
                     break;
                 }
@@ -59,6 +63,7 @@ public class Manager : Person
             case 4:
                 {
                     //Show statistics
+                    Console.WriteLine("-------------------------------------------------------");
                     Statistics stat=new Statistics();
                     stat.showAveragePrice();
                     stat.showRegisteredUsers();
@@ -67,10 +72,11 @@ public class Manager : Person
 
             case 5:
                 {
+                    Console.WriteLine("-------------------------------------------------------");
                     List<Person> tmp = Process();
-                    Console.WriteLine("Select a customer by ID:");
+                    Console.Write("Select a customer by ID: ");
                     ListUsersForChoose(tmp);
-                    Console.WriteLine($"Selected id: ");
+                    Console.Write($"Selected id: ");
                     int id = Convert.ToInt32(Console.ReadLine());
                     if (id < 0 || id > tmp.Count)
                     {
@@ -114,7 +120,15 @@ public class Manager : Person
                     }
                     break;
                 }
+
             case 6:
+                {
+                    System.Diagnostics.Process.Start(System.AppDomain.CurrentDomain.FriendlyName);
+                    Environment.Exit(0);
+                    break;
+                }
+
+            case 7:
                 {
                     Environment.Exit(0);
                     break;

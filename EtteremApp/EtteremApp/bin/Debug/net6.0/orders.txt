@@ -2,11 +2,8 @@ bence,leves,60
 bence,kolbasz,kolbasz,kolbasz,150
 bence,leves,60
 bence,hurka,kolbasz,90
+bence,Leves,porkolt,3000
+bence,kenyer,Leves, 2000
 bence,Leves,Leves,10000
-bence,Leves,Leves,
 bence,Leves,Leves,10000
 bence,Leves,Leves,10000
-bence,Leves,Leves,10000
-asd,Leves,Leves,10000
-asd,Leves,Leves,10000
-asd,Leves,Leves,10000
